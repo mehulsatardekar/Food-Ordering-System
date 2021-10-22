@@ -1,0 +1,540 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AAEFC467-C2DB-4169-8B74-E2A7E78CA0FB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=3.1.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.3.1.3\lib\net452\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="paytm">
+      <HintPath>C:\Users\Manish\Desktop\Paytm_Web_Sample_Kit_dotNet-master\.net_4.5\paytm.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\hoteladd.aspx" />
+    <Content Include="ADMIN\HotelPartnersorderlistonline.aspx" />
+    <Content Include="ADMIN\Hotelpartnersorderlistscod.aspx" />
+    <Content Include="ADMIN\hotelproductadd.aspx" />
+    <Content Include="ADMIN\reportsgenerates.aspx" />
+    <Content Include="ADMIN\Orderslist.aspx" />
+    <Content Include="ADMIN\zeplinproductadd.aspx" />
+    <Content Include="ADMIN\Zeplinpurchaseorderlistcod.aspx" />
+    <Content Include="CSS\admin\adminmain\dashboard.css" />
+    <Content Include="CSS\cart\cart.css" />
+    <Content Include="CSS\confirmation\demo.css" />
+    <Content Include="CSS\confirmation\lunar.css" />
+    <Content Include="CSS\forgotpassword\forgotpassword.css" />
+    <Content Include="CSS\homepage\homepage.css" />
+    <Content Include="CSS\home\carsoul.css" />
+    <Content Include="CSS\home\work.css" />
+    <Content Include="CSS\hotelpartnerview\maincontent.css" />
+    <Content Include="CSS\hotelpartner\crust-delicious.jpg" />
+    <Content Include="CSS\hotelpartner\Group 1%402x.png" />
+    <Content Include="CSS\hotelpartner\Group 2%402x.png" />
+    <Content Include="CSS\hotelpartner\main.css" />
+    <Content Include="CSS\hotelpartner\purse.png" />
+    <Content Include="CSS\hotelpartner\test.css" />
+    <Content Include="CSS\login\loginpage.css" />
+    <Content Include="CSS\master\master.css" />
+    <Content Include="CSS\payment\payment.css" />
+    <Content Include="CSS\signup\signuppage.css" />
+    <Content Include="CSS\zeplincart.css" />
+    <Content Include="CSS\zeplinproducts\back.jpeg" />
+    <Content Include="CSS\zeplinproducts\food.jpg" />
+    <Content Include="CSS\zeplinproducts\fruits.jpeg" />
+    <Content Include="CSS\zeplinproducts\indian.jpeg" />
+    <Content Include="CSS\zeplinproducts\pizzas.jpeg" />
+    <Content Include="CSS\zeplinproducts\zeplinproducts.css" />
+    <Content Include="Global.asax" />
+    <Content Include="IMAGES\cart\emptycart.gif" />
+    <Content Include="IMAGES\cart\icon_portfolio57.png" />
+    <Content Include="IMAGES\fogotpasswordpage\Group 3.jpg" />
+    <Content Include="IMAGES\fogotpasswordpage\icon.png" />
+    <Content Include="IMAGES\homepage\foodloader.gif" />
+    <Content Include="IMAGES\homepage\food_delivery.jpg" />
+    <Content Include="IMAGES\home\everything-30_.gif" />
+    <Content Include="IMAGES\home\lemon.png" />
+    <Content Include="IMAGES\home\love.png" />
+    <Content Include="IMAGES\home\pizza.png" />
+    <Content Include="IMAGES\home\question.png" />
+    <Content Include="IMAGES\home\ramen.jpg" />
+    <Content Include="IMAGES\home\whisky.gif" />
+    <Content Include="IMAGES\hotelpartnersview\2image.jpg" />
+    <Content Include="IMAGES\hotelpartnersview\cash.svg" />
+    <Content Include="IMAGES\hotelpartnersview\delivery-truck.svg" />
+    <Content Include="IMAGES\hotelpartnersview\star %281%29.svg" />
+    <Content Include="IMAGES\loginpage\1image.jpg" />
+    <Content Include="IMAGES\loginpage\2image.jpg" />
+    <Content Include="IMAGES\loginpage\3image.jpg" />
+    <Content Include="IMAGES\loginpage\4image.jpg" />
+    <Content Include="IMAGES\loginpage\5image.jpg" />
+    <Content Include="IMAGES\signuppage\beer.svg" />
+    <Content Include="IMAGES\signuppage\diet.svg" />
+    <Content Include="IMAGES\signuppage\lunch.svg" />
+    <Content Include="IMAGES\usericon.png" />
+    <Content Include="JAVASCRIPT\faq\css\reset.css" />
+    <Content Include="JAVASCRIPT\faq\css\style.css" />
+    <Content Include="JAVASCRIPT\faq\js\jquery-2.1.1.js" />
+    <Content Include="JAVASCRIPT\faq\js\jquery.mobile.custom.min.js" />
+    <Content Include="JAVASCRIPT\faq\js\main.js" />
+    <Content Include="JAVASCRIPT\faq\js\modernizr.js" />
+    <Content Include="JAVASCRIPT\home\backstretch.min.js" />
+    <Content Include="JAVASCRIPT\home\home.js" />
+    <Content Include="JAVASCRIPT\home\homer.js" />
+    <Content Include="JAVASCRIPT\home\wow.js" />
+    <Content Include="JAVASCRIPT\hotelpartner\searcher.js" />
+    <Content Include="JAVASCRIPT\master.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="USER\callback.aspx" />
+    <Content Include="USER\cart.aspx" />
+    <Content Include="USER\forgotpassword.aspx" />
+    <Content Include="USER\home.aspx" />
+    <Content Include="USER\homepage.aspx" />
+    <Content Include="USER\hotelpartners.aspx" />
+    <Content Include="USER\hotelpartnersview.aspx" />
+    <Content Include="USER\javascriptdisable.html" />
+    <Content Include="USER\login.aspx" />
+    <Content Include="USER\payment.aspx" />
+    <Content Include="USER\paymentsuccesscod.aspx" />
+    <Content Include="USER\recoverpassword.aspx" />
+    <Content Include="USER\signup.aspx" />
+    <Content Include="USER\zeplin logo.png" />
+    <Content Include="USER\zeplin-faq.aspx" />
+    <Content Include="USER\zeplincart.aspx" />
+    <Content Include="USER\zeplinpayment.aspx" />
+    <Content Include="USER\zeplinpaymentsuccess.aspx" />
+    <Content Include="USER\zeplinproducts.aspx" />
+    <Content Include="VIDEOS\Adventures In Imagination_ M.mp4" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMIN\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\hoteladd.aspx.cs">
+      <DependentUpon>hoteladd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\hoteladd.aspx.designer.cs">
+      <DependentUpon>hoteladd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\HotelPartnersorderlistonline.aspx.cs">
+      <DependentUpon>HotelPartnersorderlistonline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\HotelPartnersorderlistonline.aspx.designer.cs">
+      <DependentUpon>HotelPartnersorderlistonline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Hotelpartnersorderlistscod.aspx.cs">
+      <DependentUpon>Hotelpartnersorderlistscod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Hotelpartnersorderlistscod.aspx.designer.cs">
+      <DependentUpon>Hotelpartnersorderlistscod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\hotelproductadd.aspx.cs">
+      <DependentUpon>hotelproductadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\hotelproductadd.aspx.designer.cs">
+      <DependentUpon>hotelproductadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\reportsgenerates.aspx.cs">
+      <DependentUpon>reportsgenerates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\reportsgenerates.aspx.designer.cs">
+      <DependentUpon>reportsgenerates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Orderslist.aspx.cs">
+      <DependentUpon>Orderslist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Orderslist.aspx.designer.cs">
+      <DependentUpon>Orderslist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\zeplinproductadd.aspx.cs">
+      <DependentUpon>zeplinproductadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\zeplinproductadd.aspx.designer.cs">
+      <DependentUpon>zeplinproductadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Zeplinpurchaseorderlistcod.aspx.cs">
+      <DependentUpon>Zeplinpurchaseorderlistcod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Zeplinpurchaseorderlistcod.aspx.designer.cs">
+      <DependentUpon>Zeplinpurchaseorderlistcod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="USER\callback.aspx.cs">
+      <DependentUpon>callback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\callback.aspx.designer.cs">
+      <DependentUpon>callback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\forgotpassword.aspx.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\forgotpassword.aspx.designer.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\homepage.aspx.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\homepage.aspx.designer.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\hotelpartners.aspx.cs">
+      <DependentUpon>hotelpartners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\hotelpartners.aspx.designer.cs">
+      <DependentUpon>hotelpartners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\hotelpartnersview.aspx.cs">
+      <DependentUpon>hotelpartnersview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\hotelpartnersview.aspx.designer.cs">
+      <DependentUpon>hotelpartnersview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\master.Master.cs">
+      <DependentUpon>master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\master.Master.designer.cs">
+      <DependentUpon>master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="USER\passwordhash.cs" />
+    <Compile Include="USER\payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\paymentsuccesscod.aspx.cs">
+      <DependentUpon>paymentsuccesscod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\paymentsuccesscod.aspx.designer.cs">
+      <DependentUpon>paymentsuccesscod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\recoverpassword.aspx.cs">
+      <DependentUpon>recoverpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\recoverpassword.aspx.designer.cs">
+      <DependentUpon>recoverpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\zeplin-faq.aspx.cs">
+      <DependentUpon>zeplin-faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\zeplin-faq.aspx.designer.cs">
+      <DependentUpon>zeplin-faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\zeplincart.aspx.cs">
+      <DependentUpon>zeplincart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\zeplincart.aspx.designer.cs">
+      <DependentUpon>zeplincart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\zeplinpayment.aspx.cs">
+      <DependentUpon>zeplinpayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\zeplinpayment.aspx.designer.cs">
+      <DependentUpon>zeplinpayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\zeplinpaymentsuccess.aspx.cs">
+      <DependentUpon>zeplinpaymentsuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\zeplinpaymentsuccess.aspx.designer.cs">
+      <DependentUpon>zeplinpaymentsuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\zeplinproducts.aspx.cs">
+      <DependentUpon>zeplinproducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\zeplinproducts.aspx.designer.cs">
+      <DependentUpon>zeplinproducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="zeplinDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zeplinDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\admin.Master" />
+    <Content Include="ADMIN\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="ADMIN\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ADMIN\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="ADMIN\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="ADMIN\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ADMIN\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <Content Include="ADMIN\DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Content>
+    <None Include="ADMIN\DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ADMIN\DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="USER\master.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="zeplinDataSet.xsc">
+      <DependentUpon>zeplinDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="zeplinDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>zeplinDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="zeplinDataSet.xss">
+      <DependentUpon>zeplinDataSet.xsd</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ADMIN\hotelimages\" />
+    <Folder Include="ADMIN\zeplinproducts\" />
+    <Folder Include="dbimg\hotelimg\hotelproductimg\hotelproductimagetype\" />
+    <Folder Include="dbimg\zeplinimage\zeplinproduct\productimgtype\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ADMIN\Report1.rdlc" />
+    <EmbeddedResource Include="ADMIN\Report2.rdlc" />
+    <EmbeddedResource Include="ADMIN\Report3.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54521</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54521/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

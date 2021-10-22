@@ -1,0 +1,27 @@
+﻿
+.jumbotron {
+    background: url(crust-delicious.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+
+
+.blurimg {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.st {
+    font-family: 'Philosopher', sans-serif;
+    color: white;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.img-responsive {
+    margin-top: auto;
+}
+
+.form-control {
+    margin-top: 50px;
+}

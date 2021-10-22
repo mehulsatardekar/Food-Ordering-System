@@ -1,0 +1,278 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="WebApplication1.USER.master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,600&amp;subset=latin-ext" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+	<!--Bootstrap CSS file -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+	<!-- zeplin's main theme css file. you have to add all pages -->
+        <link href="../CSS/master/master.css" rel="stylesheet"/>
+             <link href="../CSS/home/home.css" rel="stylesheet" runat="server" type="text/css" />
+
+	<style type="text/css">
+		/*Font of your page. you can use any font. like google font or font-face font
+		  Demo page styles here
+		*/
+		body{
+			font-family: 'Poppins', sans-serif;
+			font-size: 14px;
+		}
+
+    </style>
+    <title>Zeplin's Home</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+              
+            </asp:ContentPlaceHolder>
+              <header class="m-header">
+		<div class="m-header-wrapper">
+
+			<!--sidebar menu toggler start -->
+			<div class="m-toggle-sidebar m-material-button">
+				<i class="material-icons m-open-icon">&#xE5D2;</i>
+				<i class="material-icons m-close-icon">close</i>
+			</div>
+			<!--sidebar menu toggler end -->
+
+			<!--logo start -->
+			
+			<!--logo end -->
+
+			<div class="m-header-menu">
+
+			
+				<!-- header left menu end -->
+
+			</div>
+
+			<div class="m-header-right m-with-seperator">
+
+				<!-- header right menu start -->
+				<ul class="m-header-navigation">
+					<li>
+						<a href="#" class="m-material-button"><i class="material-icons">local_grocery_store</i></a>
+                        <div class="m-header-submenu">
+							<ul style="background-color:">
+						   <li>
+							<h4><button id="btnCart" class="btn btn-outline-primary border-0 badge py-2 pr-3 mt-1" type="button">
+                                   <span class="font-cart"> Hotel Cart</span> <span class=" badge badge-light" id="pCount" runat="server"></span>
+                                </button>
+                               </h4></li>
+								<li>
+                                 <h4><button id="btnCart1" class="btn btn-outline-primary border-0 badge py-2 badge" type="button">
+                                 <span class="font-cart"> Zeplin Cart</span> <span class="badge badge-light" id="pCount1" runat="server"></span>
+                                 </button>
+                                 </h4></li>
+							</ul>
+						</div>
+					</li>
+				<%--	<li>
+						<a href="#" class="m-material-button m-submenu-toggle"><i class="material-icons">&#xE7F4;</i></a>
+						<div class="m-header-submenu m-notify-list">
+							<div class="m-notify-header">
+								<span class="m-notify-text-top">9 New</span>
+								<span class="m-notify-text">User Notifications</span>
+							</div>
+							<div class="m-notify-tab">
+								<ul class="nav">
+									<li><a href="#1a" data-toggle="tab" class="active">Alerts</a></li>
+									<li><a href="#2a" data-toggle="tab">Events</a></li>
+									<li><a href="#3a" data-toggle="tab">Logs</a></li>
+								</ul>
+
+								<div class="tab-content clearfix">
+									<div class="tab-pane active" id="1a">
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+									</div>
+									<div class="tab-pane" id="2a">
+										Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+									</div>
+									<div class="tab-pane" id="3a">
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>--%>
+					<li>
+						<a href="#" class="m-material-button m-submenu-toggle"><span class="m-user-avatar"><img src="../IMAGES/usericon.png" width="32" height="32"></span></a>
+						<div class="m-header-submenu">
+							<ul>
+								<li><a href="#">Welcome <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></a></li>
+							
+								<li><asp:Button ID="signout" runat="server" class="btn btn-outline-primary border-0 pr-5" Text="Sign-Out" OnClick="signout_Click" /></li>
+							</ul>
+						</div>
+					</li>
+				
+				</ul>
+				<!-- header right menu end -->
+
+			</div>
+
+			<!--header search panel start -->
+			
+			<!--header search panel end -->
+
+		</div>
+	</header>
+	<!-- header end -->
+
+
+	<!-- Left sidebar menu start -->
+	<div class="m-sidebar">
+		<div class="m-sidebar-wrapper">
+
+			<!-- side menu logo start -->
+			<div class="m-sidebar-logo">
+				<a href="home.aspx"><img src="zeplin logo.png" width="85" height="51"></a>
+				<div class="m-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons m-fixed-icon">gps_fixed</i>
+					<i class="material-icons m-not-fixed-icon">gps_not_fixed</i>
+				</div>
+				<div class="m-sidebar-toggle-button">
+					<i class="material-icons">&#xE317;</i>
+				</div>
+			</div>
+			<!-- side menu logo end -->
+
+			<!-- sidebar menu start -->
+			<nav class="m-sidebar-navi">
+				<ul>
+					<li>
+						<a href="home.aspx" class="m-material-button">
+							<span class="m-icon"><i class="material-icons">&#xE88A;</i></span>
+		                	<span class="m-label">Home</span>
+		                </a>
+		            </li>
+		            <li>
+						<a class="m-material-button">
+							<span class="m-icon"><i class="material-icons">restaurant_menu</i></span>
+		                	<span class="m-label">Order Food From</span>
+		                	<span class="m-arrow-icon"><i class="material-icons">&#xE313;</i></span>
+		                </a>
+		                <ul>
+		                	<li>
+		                		<a href="zeplinproducts.aspx" class="m-material-button"><span class="m-label">Zeplin's Kitchen</span></a>
+							</li>
+							<li>
+								<a href="hotelpartners.aspx" class="m-material-button"><span class="m-label">Our Partners</span></a>
+								
+		                	</li>
+		                	
+		                </ul>
+		            </li>
+		         
+		           <%-- <li class="show">
+						<a href="#" class="m-material-button">
+							<span class="m-icon"><i class="material-icons">&#xE875;</i></span>
+		                	<span class="m-label">Categories</span>
+		                	<span class="m-arrow-icon"><i class="material-icons">&#xE313;</i></span>
+		                </a>
+		                <ul>
+		                	<li>
+		                		<a href="#" class="m-material-button"><span class="m-label">Beverages</span></a>
+		                	</li>
+		                	<li class="show">
+		                		<a href="#" class="m-material-button"><span class="m-label">Cakes</span></a>
+		                	</li>
+		                	<li>
+		                		<a href="#" class="m-material-button"><span class="m-label">Veg</span></a>
+		                	</li>
+		                	<li>
+		                		<a href="#" class="m-material-button"><span class="m-label">Non-Veg</span></a>
+		                	</li>
+		                	<li>
+		                		<a href="#" class="m-material-button"><span class="m-label">Veg</span></a>
+		                	</li>
+		                	<li>
+								<a href="#" class="m-material-button"><span class="m-label">Drinks</span></a>
+								
+		                	</li>
+		                </ul>
+		            </li>--%>
+		           
+					<li>
+						<a href="zeplin-faq.aspx" class="m-material-button">
+							<span class="m-icon"><i class="material-icons">forum</i></span>
+		                	<span class="m-label">Help</span>
+		                </a>
+					</li>
+					<li>
+						<a href="#" class="m-material-button">
+							<span class="m-icon"><i class="material-icons">layers</i></span>
+		                	<span class="m-label">About Us</span>
+		                </a>
+		            </li>
+		          
+		           
+				</ul>
+				<!-- sidebar menu end -->
+			</nav>
+			<!-- sidebar menu end -->
+		</div>
+	</div>
+	<!-- Left sidebar menu end -->
+
+	<!--Main container start -->
+	<main class="m-wrapper">
+		<div class="container">
+		  	<div class="row">
+			    <div class="col-sm">
+			           
+			    </div>
+                  </div>
+		</div>
+	</main>
+
+	
+
+	<div class="m-overlay"></div>
+        </div>
+    </form>
+
+	<!--To load webpages fast  -->
+    <script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+	</script>
+    <!--Jquery Library incluse -->
+    <script src="../JAVASCRIPT/master.js"></script>
+
+	<!--popper.js include. for Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!--Bottostrap include -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "cart.aspx";
+                
+            });
+
+             $("#btnCart1").click(function myfunction() {
+                window.location.href = "zeplincart.aspx";
+                
+            });
+        });
+
+    </script>
+</body>
+</html>

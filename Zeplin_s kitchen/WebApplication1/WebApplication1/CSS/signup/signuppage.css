@@ -1,0 +1,17 @@
+﻿img {
+    width: 100%;
+}
+
+
+
+a {
+    width: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+    a:hover {
+        width: 2px;
+        color: white;
+        text-decoration: none;
+    }

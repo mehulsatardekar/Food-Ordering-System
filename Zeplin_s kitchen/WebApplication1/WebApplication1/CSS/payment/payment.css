@@ -1,0 +1,10 @@
+﻿.buts{
+    color:darkgray;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color:red;
+    /* background-color: #007bff; */
+    border: blue;
+    border-color: darkblue;
+}

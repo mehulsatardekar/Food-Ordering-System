@@ -1,0 +1,53 @@
+﻿.m-wrapper {
+    padding-left: 25px;
+}
+
+.imgstyle {
+    max-width: 20px;
+}
+
+.fl {
+    float: inherit;
+}
+
+.blur:hover {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+
+.back2 {
+    background-image: url();
+    background-position-x: 90px;
+    background-position-y: -30px;
+    background-repeat: no-repeat;
+}
+
+.back {
+    background-image: url(../../IMAGES/home/everything-30_.gif);
+    background-position-y: -114px;
+    background-position-x: 590px;
+    background-repeat: no-repeat;
+}
+
+.jumbotron {
+    padding: 2rem 2rem;
+}
+
+.font {
+    font-family: 'Bree Serif', serif;
+    font-size: x-large;
+    color: orangered;
+}
+
+    .font:hover {
+        color: goldenrod;
+    }
+
+.fontname {
+    font-family: 'Bree Serif', serif;
+    font-size: medium;
+    color: orangered;
+}
+
+

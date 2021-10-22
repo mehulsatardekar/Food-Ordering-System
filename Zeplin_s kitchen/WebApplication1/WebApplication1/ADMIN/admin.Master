@@ -1,0 +1,191 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="WebApplication1.ADMIN.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Zeplin Admin</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,600&amp;subset=latin-ext" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+	<!--Bootstrap CSS file -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+
+	<!-- Ideabox main theme css file. you have to add all pages -->
+	<link rel="stylesheet" type="text/css" href="../CSS/admin/adminmain/dashboard.css"/>
+
+	<style type="text/css">
+		/*Font of your page. you can use any font. like google font or font-face font
+		  Demo page styles here
+		*/
+		body{
+			font-family: 'Poppins', sans-serif;
+			font-size: 14px;
+		}
+
+    </style>
+    
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+
+
+
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+            <!-- header start -->
+	<header class="m-header">
+		<div class="m-header-wrapper">
+
+			<!--sidebar menu toggler start -->
+			<div class="m-toggle-sidebar m-material-button">
+				<i class="material-icons m-open-icon">&#xE5D2;</i>
+				<i class="material-icons m-close-icon">close</i>
+			</div>
+			<!--sidebar menu toggler end -->
+
+			<!--logo start -->
+			<!--logo end -->
+
+			<div class="m-header-menu">
+
+			
+				<!-- header left menu end -->
+
+			</div>
+
+			<div class="m-header-right m-with-seperator">
+
+				<!-- header right menu start -->
+				<ul class="m-header-navigation">
+					
+					<li>
+						<a href="#" class="m-material-button m-submenu-toggle"><span class="m-user-avatar"><img src="../IMAGES/usericon.png" width="32" height="32"></span></a>
+						<div class="m-header-submenu">
+							<ul>
+								<li><a href="#">Hi <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></a></li>
+							
+								<li><asp:Button ID="signout" runat="server" class="btn btn-outline-primary border-0 pr-5" Text="Sign-Out" OnClick="signout_Click" /></li>
+							</ul>
+						</div>
+					</li>
+				
+				</ul>
+				<!-- header right menu end -->
+
+			</div>
+
+			<!--header search panel start -->
+			
+			<!--header search panel end -->
+
+		</div>
+	</header>
+	<!-- header end -->
+
+
+	<!-- Left sidebar menu start -->
+	<div class="m-sidebar">
+		<div class="m-sidebar-wrapper">
+
+			<!-- side menu logo start -->
+			<div class="m-sidebar-logo">
+				<div class="m-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons m-fixed-icon">gps_fixed</i>
+					<i class="material-icons m-not-fixed-icon">gps_not_fixed</i>
+				</div>
+				<div class="m-sidebar-toggle-button">
+					<i class="material-icons">&#xE317;</i>
+				</div>
+			</div>
+			<!-- side menu logo end -->
+
+			<!-- sidebar menu start -->
+			<nav class="m-sidebar-navi">
+				<ul>
+					
+		            <li>
+						<a href="#" class="m-material-button">
+							<span class="m-icon"><i class="material-icons">track_changes</i></span>
+		                	<span class="m-label">Add products</span>
+		                	<span class="m-arrow-icon"><i class="material-icons">&#xE313;</i></span>
+		                </a>
+		                <ul>
+		                	<li>
+		                		<a href="zeplinproductadd.aspx" class="m-material-button"><span class="m-label">Add zeplin's products</span></a>
+							</li>
+							<li>
+								<a href="hoteladd.aspx" class="m-material-button"><span class="m-label">Add hotels</span></a>
+						    	<a href="hotelproductadd.aspx" class="m-material-button"><span class="m-label">Add hotel's Products (Editabels)</span></a>
+
+		                	</li>
+		                	
+		                </ul>
+		            </li>
+		         
+		            
+					
+					<li>
+						<a href="Orderslist.aspx" class="m-material-button">
+							<span class="m-icon"><i class="material-icons">local_grocery_store</i></span>
+		                	<span class="m-label">Orders</span>
+		                </a>
+		            </li>
+		          <li>
+						<a href="reportsgenerates.aspx" class="m-material-button">
+							<span class="m-icon"><i class="material-icons">layers</i></span>
+		                	<span class="m-label">Reports</span>
+		                </a>
+		            </li>
+		          
+		           
+				</ul>
+				<!-- sidebar menu end -->
+			</nav>
+			<!-- sidebar menu end -->
+		</div>
+	</div>
+	<!-- Left sidebar menu end -->
+
+	<!--Main container start -->
+	<main class="m-wrapper">
+		<div class="container">
+		  	<div class="row">
+			    <div class="col-sm">
+			           
+			    </div>
+		</div>
+            </div>
+	</main>
+
+	
+
+	<div class="m-overlay"></div>
+
+	<!--Jquery Library incluse -->
+    <script src="../JAVASCRIPT/master.js"></script>
+
+	<!--popper.js include. for Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!--Bottostrap include -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+             </div>
+    </form>
+ 
+</body>
+</html>

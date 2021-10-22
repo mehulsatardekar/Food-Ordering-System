@@ -1,0 +1,31 @@
+﻿body {
+    margin: 2px;
+}
+
+
+.font {
+    font-family: 'Roboto', sans-serif;
+}
+
+.space {
+}
+
+.animate:hover {
+    box-shadow: 0 4rem 3rem rgba(0,0,0,.175) !important;
+    border-color: #007bff !important;
+}
+
+.mater {
+    padding-top: 2px;
+}
+
+.color {
+    font-weight: 30px;
+    color: brown;
+}
+
+
+
+.word-space {
+    letter-spacing: 0px;
+}
